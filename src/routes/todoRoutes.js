@@ -1,6 +1,6 @@
-const express = require('express');
-const TodoController = require('../controllers/todoController');
-const authMiddleware = require('../middlewares/authMiddleware');
+const express = require("express");
+const TodoController = require("../controllers/todoController");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ const router = express.Router();
  * @return {object} 201 - Todo created successfully
  * @return {object} 500 - Server error
  */
-router.post('/', authMiddleware, TodoController.createTodo);
+router.post("/", authMiddleware, TodoController.createTodo);
 
 /**
  * GET /api/todos
@@ -27,7 +27,7 @@ router.post('/', authMiddleware, TodoController.createTodo);
  * @return {object} 200 - List of todos
  * @return {object} 500 - Server error
  */
-router.get('/', authMiddleware, TodoController.getTodos);
+router.get("/", authMiddleware, TodoController.getTodos);
 
 /**
  * GET /api/todos/{id}
@@ -38,7 +38,7 @@ router.get('/', authMiddleware, TodoController.getTodos);
  * @return {object} 404 - Todo not found
  * @return {object} 500 - Server error
  */
-router.get('/:id', authMiddleware, TodoController.getTodoById);
+router.get("/:id", authMiddleware, TodoController.getTodoById);
 
 /**
  * PUT /api/todos/{id}
@@ -50,7 +50,7 @@ router.get('/:id', authMiddleware, TodoController.getTodoById);
  * @return {object} 404 - Todo not found
  * @return {object} 500 - Server error
  */
-router.put('/:id', authMiddleware, TodoController.updateTodoById);
+router.put("/:id", authMiddleware, TodoController.updateTodoById);
 
 /**
  * DELETE /api/todos/{id}
@@ -61,6 +61,6 @@ router.put('/:id', authMiddleware, TodoController.updateTodoById);
  * @return {object} 404 - Todo not found
  * @return {object} 500 - Server error
  */
-router.delete('/:id', authMiddleware, TodoController.deleteTodoById);
+router.delete("/:id", authMiddleware, TodoController.deleteTodoById);
 
 module.exports = router;
